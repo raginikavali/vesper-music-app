@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Aura Ceramic Aroma Diffuser</title><desc id="desc">A cream ceramic ultrasonic aroma diffuser releasing a gentle mist.</desc>
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f3ede4"/><stop offset="1" stop-color="#d9c8b4"/></linearGradient><filter id="s"><feGaussianBlur stdDeviation="18"/></filter></defs>
+  <rect width="900" height="900" fill="url(#bg)"/><ellipse cx="450" cy="735" rx="245" ry="48" fill="#8f725b" opacity=".23"/>
+  <g fill="#fff" opacity=".53" filter="url(#s)"><ellipse cx="450" cy="205" rx="50" ry="105"/><ellipse cx="415" cy="150" rx="35" ry="80"/><ellipse cx="490" cy="120" rx="30" ry="95"/></g>
+  <path d="M350 385Q360 290 450 275Q540 290 550 385L590 610Q600 715 450 735Q300 715 310 610Z" fill="#e9dfd0" stroke="#a88970" stroke-width="12"/>
+  <path d="M350 385Q450 425 550 385" fill="none" stroke="#b7977e" stroke-width="12"/><ellipse cx="450" cy="384" rx="88" ry="24" fill="#c3a489"/><ellipse cx="450" cy="378" rx="57" ry="13" fill="#695849"/>
+  <circle cx="450" cy="628" r="14" fill="#9a7257"/><path d="M423 665h54" stroke="#b08b6e" stroke-width="8" stroke-linecap="round"/>
+</svg>

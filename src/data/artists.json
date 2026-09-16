@@ -1,0 +1,74 @@
+[
+  {
+    "id": "artist-1",
+    "name": "Nocturne Society",
+    "genre": "Ambient Jazz",
+    "avatar": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop",
+    "heroImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop",
+    "bio": "London-based quartet blending late-night analogue synths with muted trumpet and cinematic acoustic textures.",
+    "monthlyListeners": "1,420,890",
+    "verified": true,
+    "topTrackIds": ["song-1", "song-2", "song-3", "song-4"],
+    "albumIds": ["album-1", "album-5"]
+  },
+  {
+    "id": "artist-2",
+    "name": "Aura Vesper",
+    "genre": "Neo-Classical",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
+    "heroImage": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1600&auto=format&fit=crop",
+    "bio": "Violinist and modular synth designer crafting meditative, pulse-driven soundscapes for late hours.",
+    "monthlyListeners": "980,450",
+    "verified": true,
+    "topTrackIds": ["song-5", "song-6", "song-7"],
+    "albumIds": ["album-2"]
+  },
+  {
+    "id": "artist-3",
+    "name": "Velvet Horizon",
+    "genre": "Lo-Fi Soul",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+    "heroImage": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1600&auto=format&fit=crop",
+    "bio": "Multi-instrumentalist duo exploring tape hiss, warm Fender Rhodes chords, and soulful vocal samples.",
+    "monthlyListeners": "2,150,300",
+    "verified": true,
+    "topTrackIds": ["song-8", "song-9", "song-10"],
+    "albumIds": ["album-3", "album-6"]
+  },
+  {
+    "id": "artist-4",
+    "name": "Elysian Noir",
+    "genre": "Dark Electronic",
+    "avatar": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=800&auto=format&fit=crop",
+    "heroImage": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1600&auto=format&fit=crop",
+    "bio": "Berlin producer crafting deep sub-bass movements, minimal percussive grooves, and midnight atmosphere.",
+    "monthlyListeners": "840,120",
+    "verified": true,
+    "topTrackIds": ["song-11", "song-12", "song-13"],
+    "albumIds": ["album-4"]
+  },
+  {
+    "id": "artist-5",
+    "name": "Siren & Tone",
+    "genre": "Chamber Pop",
+    "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop",
+    "heroImage": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1600&auto=format&fit=crop",
+    "bio": "Intimate vocal harmonies layered over grand piano and cello, captured in historic analogue studios.",
+    "monthlyListeners": "1,890,600",
+    "verified": true,
+    "topTrackIds": ["song-14", "song-15", "song-16"],
+    "albumIds": ["album-7"]
+  },
+  {
+    "id": "artist-6",
+    "name": "Komorebi Ensemble",
+    "genre": "Minimal Ambient",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop",
+    "heroImage": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=1600&auto=format&fit=crop",
+    "bio": "Kyoto collective weaving gentle bamboo flutes, field recordings of night rain, and soothing synthesizer pads.",
+    "monthlyListeners": "1,120,400",
+    "verified": true,
+    "topTrackIds": ["song-17", "song-18", "song-19", "song-20", "song-21"],
+    "albumIds": ["album-8"]
+  }
+]

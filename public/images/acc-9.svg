@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Terra Ceramic Card Holder</title><desc id="desc">A small sand-colored ceramic card holder displaying a visiting card.</desc>
+  <defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#e9dfd0"/><stop offset="1" stop-color="#bea486"/></linearGradient></defs><rect width="900" height="900" fill="url(#b)"/><ellipse cx="450" cy="730" rx="270" ry="45" fill="#735b47" opacity=".2"/>
+  <rect x="255" y="505" width="390" height="190" rx="34" fill="#b99168" stroke="#70513b" stroke-width="14"/><path d="M280 550q170 35 340 0" fill="none" stroke="#d8b58e" stroke-width="13"/>
+  <path d="M345 505l24-220h162l24 220z" fill="#faf7ef" stroke="#9c866d" stroke-width="12"/><path d="M396 365h108M396 407h85" stroke="#b99a7c" stroke-width="14" stroke-linecap="round"/><circle cx="450" cy="452" r="18" fill="#a6714d"/>
+  <path d="M290 652h320" stroke="#8b6649" stroke-width="12" stroke-linecap="round" opacity=".65"/>
+</svg>

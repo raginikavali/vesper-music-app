@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ember Smart Table Lamp</title><desc id="desc">A warm glowing table lamp with a hand-thrown ceramic base.</desc>
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#352c29"/><stop offset="1" stop-color="#171413"/></linearGradient><radialGradient id="glow"><stop stop-color="#ffe8ad" stop-opacity=".96"/><stop offset=".46" stop-color="#d89c54" stop-opacity=".35"/><stop offset="1" stop-color="#d89c54" stop-opacity="0"/></radialGradient></defs>
+  <rect width="900" height="900" fill="url(#bg)"/><circle cx="450" cy="355" r="360" fill="url(#glow)"/><ellipse cx="450" cy="742" rx="260" ry="42" fill="#070606" opacity=".5"/>
+  <path d="M308 355L390 158H510L592 355Z" fill="#f4d7a0" stroke="#c39457" stroke-width="13"/><path d="M340 338h220" stroke="#fff1c9" stroke-width="16" opacity=".7"/>
+  <path d="M402 365h96v96h-96z" fill="#b78557"/><path d="M346 460Q360 425 400 425H500Q540 425 554 460L590 680Q600 745 450 754Q300 745 310 680Z" fill="#b98455" stroke="#6e4937" stroke-width="13"/>
+  <path d="M330 620Q450 657 570 620" fill="none" stroke="#d9ad76" stroke-width="15" opacity=".7"/><circle cx="450" cy="684" r="17" fill="#f5cc7c"/>
+</svg>

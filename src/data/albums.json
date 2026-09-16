@@ -1,0 +1,90 @@
+[
+  {
+    "id": "album-1",
+    "title": "Midnight Velvet",
+    "artist": "Nocturne Society",
+    "artistId": "artist-1",
+    "releaseYear": 2024,
+    "genre": "Ambient Jazz",
+    "coverArt": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=800&auto=format&fit=crop",
+    "description": "An intimate sonic tapestry recorded live during 3 AM sessions at Abbey Road Studio 3.",
+    "trackIds": ["song-1", "song-2", "song-3", "song-4"]
+  },
+  {
+    "id": "album-2",
+    "title": "Echoes in Amber",
+    "artist": "Aura Vesper",
+    "artistId": "artist-2",
+    "releaseYear": 2023,
+    "genre": "Neo-Classical",
+    "coverArt": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800&auto=format&fit=crop",
+    "description": "Swirling string quartets married to modular analog drones and field recordings of dusk.",
+    "trackIds": ["song-5", "song-6", "song-7"]
+  },
+  {
+    "id": "album-3",
+    "title": "Subtle Glow",
+    "artist": "Velvet Horizon",
+    "artistId": "artist-3",
+    "releaseYear": 2024,
+    "genre": "Lo-Fi Soul",
+    "coverArt": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop",
+    "description": "Warm tape saturation, vinyl crackle, and late-night electric piano improvisations.",
+    "trackIds": ["song-8", "song-9", "song-10"]
+  },
+  {
+    "id": "album-4",
+    "title": "Shadow Architecture",
+    "artist": "Elysian Noir",
+    "artistId": "artist-4",
+    "releaseYear": 2024,
+    "genre": "Dark Electronic",
+    "coverArt": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=800&auto=format&fit=crop",
+    "description": "Pulsing sub-bass and minimal nocturnal grooves built for dimly lit listening rooms.",
+    "trackIds": ["song-11", "song-12", "song-13"]
+  },
+  {
+    "id": "album-5",
+    "title": "Constellations at 4 AM",
+    "artist": "Nocturne Society",
+    "artistId": "artist-1",
+    "releaseYear": 2022,
+    "genre": "Ambient Jazz",
+    "coverArt": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=800&auto=format&fit=crop",
+    "description": "Atmospheric jazz improvisations centered around muted brass and rhodes piano.",
+    "trackIds": ["song-3", "song-4"]
+  },
+  {
+    "id": "album-6",
+    "title": "Moonlit Tapestry",
+    "artist": "Velvet Horizon",
+    "artistId": "artist-3",
+    "releaseYear": 2023,
+    "genre": "Lo-Fi Soul",
+    "coverArt": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop",
+    "description": "Relaxed late night soul arrangements featuring muted brass and vintage bass.",
+    "trackIds": ["song-9", "song-10"]
+  },
+  {
+    "id": "album-7",
+    "title": "Serenade for Solitude",
+    "artist": "Siren & Tone",
+    "artistId": "artist-5",
+    "releaseYear": 2024,
+    "genre": "Chamber Pop",
+    "coverArt": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop",
+    "description": "Stunning acoustic ballads recorded in an empty 19th-century cathedral.",
+    "trackIds": ["song-14", "song-15", "song-16"]
+  },
+  {
+    "id": "album-8",
+    "title": "Rain on Cedar Roofs",
+    "artist": "Komorebi Ensemble",
+    "artistId": "artist-6",
+    "releaseYear": 2024,
+    "genre": "Minimal Ambient",
+    "coverArt": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=800&auto=format&fit=crop",
+    "description": "Meditative acoustic soundscapes designed for deep sleep and focus after midnight.",
+    "trackIds": ["song-17", "song-18", "song-19", "song-20", "song-21"]
+  }
+]

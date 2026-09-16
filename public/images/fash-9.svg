@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Solace Clay Statement Earrings</title><desc id="desc">A pair of terracotta and oat geometric statement earrings with brass hooks.</desc>
+  <rect width="900" height="900" fill="#f4efe8"/><path d="M0 150Q230 70 440 155T900 135V0H0Z" fill="#e4d4c0"/><ellipse cx="450" cy="760" rx="250" ry="35" fill="#a78368" opacity=".18"/>
+  <g stroke="#b27c3e" stroke-width="18" stroke-linecap="round" fill="none"><path d="M320 230q-25-70 30-90q55 20 30 90"/><path d="M520 230q-25-70 30-90q55 20 30 90"/></g>
+  <g stroke="#76513d" stroke-width="12"><circle cx="350" cy="267" r="50" fill="#d28b5b"/><path d="M315 330l35-38 35 38-35 83z" fill="#e7d6bc"/><circle cx="550" cy="267" r="50" fill="#d28b5b"/><path d="M515 330l35-38 35 38-35 83z" fill="#e7d6bc"/></g>
+  <g fill="#b27c3e"><circle cx="350" cy="436" r="11"/><circle cx="550" cy="436" r="11"/></g><g fill="#b66242" stroke="#76513d" stroke-width="12"><path d="M350 462l68 80-68 95-68-95z"/><path d="M550 462l68 80-68 95-68-95z"/></g>
+</svg>
