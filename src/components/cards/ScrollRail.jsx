@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight } from '../ui/Icons';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
 
 export default function ScrollRail({
@@ -76,7 +76,7 @@ export default function ScrollRail({
             e.currentTarget.style.color = 'var(--color-text-primary)';
           }}
         >
-          <ChevronLeft size={20} />
+          <ChevronLeft size={20} strokeWidth={1.5} color="var(--color-text-primary)" />
         </button>
 
         {/* Scroll Container (Peeks next card at edge) */}
@@ -136,7 +136,7 @@ export default function ScrollRail({
             e.currentTarget.style.color = 'var(--color-text-primary)';
           }}
         >
-          <ChevronRight size={20} />
+            <ChevronRight size={20} strokeWidth={1.5} color="var(--color-text-primary)" />
         </button>
       </div>
 

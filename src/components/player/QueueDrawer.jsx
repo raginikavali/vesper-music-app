@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePlayer } from '../../hooks/usePlayer';
 import PlayButton from '../ui/PlayButton';
-import { X, ArrowUp, ArrowDown, Trash2, ListMusic, Sparkles } from '../ui/Icons';
+import { X, ArrowUp, ArrowDown, Trash2, ListMusic, Sparkles } from 'lucide-react';
 import GeneratedCover from '../ui/GeneratedCover';
 
 function formatEndTime(totalSeconds) {
@@ -85,7 +85,7 @@ export default function QueueDrawer() {
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <ListMusic size={20} style={{ color: 'var(--color-accent)' }} />
+              <ListMusic size={20} strokeWidth={1.5} color="var(--color-accent)" />
               <span className="caption" style={{ color: 'var(--color-text-primary)' }}>
                 PLAY QUEUE
               </span>
@@ -104,13 +104,13 @@ export default function QueueDrawer() {
               }}
               aria-label="Close Queue"
             >
-              <X size={20} />
+              <X size={20} strokeWidth={1.5} color="var(--color-text-secondary)" />
             </button>
           </div>
 
           {/* Time Budget Sub-Header */}
           <div style={{ fontFamily: 'var(--font-ui)', fontSize: '12px', color: 'var(--color-accent)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <Sparkles size={13} />
+            <Sparkles size={13} strokeWidth={1.5} color="var(--color-accent)" />
             <span>{totalMins} min remaining · ends {computedEndTime}</span>
           </div>
         </header>
@@ -129,7 +129,7 @@ export default function QueueDrawer() {
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <GeneratedCover seed={currentTrack.albumId || currentTrack.id} width="44px" height="44px" borderRadius="var(--radius-sm)" style={{ flexShrink: 0 }} />
+              <GeneratedCover seed={currentTrack.albumId || currentTrack.id} image={currentTrack.coverArt} alt={`${currentTrack.title} artwork`} width="44px" height="44px" borderRadius="var(--radius-sm)" style={{ flexShrink: 0 }} />
               <div style={{ flex: 1, minWidth: 0 }}>
                 <span
                   className="font-display"
@@ -193,7 +193,7 @@ export default function QueueDrawer() {
                       transition: 'background-color var(--transition-fast)',
                     }}
                   >
-                    <GeneratedCover seed={track.albumId || track.id} width="36px" height="36px" borderRadius="var(--radius-sm)" style={{ flexShrink: 0 }} />
+                    <GeneratedCover seed={track.albumId || track.id} image={track.coverArt} alt={`${track.title} artwork`} width="36px" height="36px" borderRadius="var(--radius-sm)" style={{ flexShrink: 0 }} />
                     <div onClick={() => playTrack(track)} style={{ flex: 1, minWidth: 0, cursor: 'pointer' }}>
                       <span style={{ fontFamily: 'var(--font-ui)', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                         {track.title}
@@ -205,13 +205,13 @@ export default function QueueDrawer() {
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
                       <button onClick={() => reorderManualQueue(idx, idx - 1)} disabled={idx === 0} style={{ background: 'none', border: 'none', color: idx === 0 ? 'rgba(244,241,236,0.15)' : 'var(--color-text-secondary)', cursor: idx === 0 ? 'default' : 'pointer', padding: '4px', display: 'flex' }} aria-label="Move Up">
-                        <ArrowUp size={14} />
+                        <ArrowUp size={14} strokeWidth={1.5} color="var(--color-text-secondary)" />
                       </button>
                       <button onClick={() => reorderManualQueue(idx, idx + 1)} disabled={idx === manualQueue.length - 1} style={{ background: 'none', border: 'none', color: idx === manualQueue.length - 1 ? 'rgba(244,241,236,0.15)' : 'var(--color-text-secondary)', cursor: idx === manualQueue.length - 1 ? 'default' : 'pointer', padding: '4px', display: 'flex' }} aria-label="Move Down">
-                        <ArrowDown size={14} />
+                        <ArrowDown size={14} strokeWidth={1.5} color="var(--color-text-secondary)" />
                       </button>
                       <button onClick={() => removeFromManualQueue(idx)} style={{ background: 'none', border: 'none', color: 'var(--color-text-secondary)', cursor: 'pointer', padding: '4px', display: 'flex' }} aria-label="Remove Track">
-                        <Trash2 size={14} />
+                        <Trash2 size={14} strokeWidth={1.5} color="var(--color-text-secondary)" />
                       </button>
                     </div>
                   </div>
@@ -243,7 +243,7 @@ export default function QueueDrawer() {
                       transition: 'background-color var(--transition-fast), opacity var(--transition-fast)',
                     }}
                   >
-                    <GeneratedCover seed={track.albumId || track.id} width="36px" height="36px" borderRadius="var(--radius-sm)" style={{ flexShrink: 0 }} />
+                    <GeneratedCover seed={track.albumId || track.id} image={track.coverArt} alt={`${track.title} artwork`} width="36px" height="36px" borderRadius="var(--radius-sm)" style={{ flexShrink: 0 }} />
                     <div onClick={() => playTrack(track)} style={{ flex: 1, minWidth: 0, cursor: 'pointer' }}>
                       <span style={{ fontFamily: isPlayingThis ? 'var(--font-display)' : 'var(--font-ui)', fontSize: '14px', fontWeight: isPlayingThis ? 600 : 400, color: isPlayingThis ? 'var(--color-accent)' : 'var(--color-text-primary)', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                         {track.title}
@@ -255,13 +255,13 @@ export default function QueueDrawer() {
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
                       <button onClick={() => reorderAutoQueue(idx, idx - 1)} disabled={idx === 0} style={{ background: 'none', border: 'none', color: idx === 0 ? 'rgba(244,241,236,0.15)' : 'var(--color-text-secondary)', cursor: idx === 0 ? 'default' : 'pointer', padding: '4px', display: 'flex' }} aria-label="Move Up">
-                        <ArrowUp size={14} />
+                        <ArrowUp size={14} strokeWidth={1.5} color="var(--color-text-secondary)" />
                       </button>
                       <button onClick={() => reorderAutoQueue(idx, idx + 1)} disabled={idx === autoQueue.length - 1} style={{ background: 'none', border: 'none', color: idx === autoQueue.length - 1 ? 'rgba(244,241,236,0.15)' : 'var(--color-text-secondary)', cursor: idx === autoQueue.length - 1 ? 'default' : 'pointer', padding: '4px', display: 'flex' }} aria-label="Move Down">
-                        <ArrowDown size={14} />
+                        <ArrowDown size={14} strokeWidth={1.5} color="var(--color-text-secondary)" />
                       </button>
                       <button onClick={() => removeFromAutoQueue(idx)} style={{ background: 'none', border: 'none', color: 'var(--color-text-secondary)', cursor: 'pointer', padding: '4px', display: 'flex' }} aria-label="Remove Track">
-                        <Trash2 size={14} />
+                        <Trash2 size={14} strokeWidth={1.5} color="var(--color-text-secondary)" />
                       </button>
                     </div>
                   </div>

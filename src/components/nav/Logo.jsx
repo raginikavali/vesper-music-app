@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import GeneratedCover from '../ui/GeneratedCover';
 
 export default function Logo({ size = 'md', showWordmark = true, onClick }) {
   const isLarge = size === 'lg';
+  const [imageFailed, setImageFailed] = useState(false);
 
   return (
     <div 
@@ -16,13 +18,18 @@ export default function Logo({ size = 'md', showWordmark = true, onClick }) {
       }}
       title="VESPER — Music, after hours"
     >
-      <img
-        src="/vesper-mark.svg"
-        alt=""
-        width={isLarge ? "36" : "32"} 
-        height={isLarge ? "36" : "32"} 
-        style={{ flexShrink: 0, display: 'block' }}
-      />
+      {imageFailed ? (
+        <GeneratedCover seed="vesper-logo" width={isLarge ? '36px' : '32px'} height={isLarge ? '36px' : '32px'} borderRadius="var(--radius-full)" />
+      ) : (
+        <img
+          src="/vesper-mark.svg"
+          alt=""
+          width={isLarge ? "36" : "32"}
+          height={isLarge ? "36" : "32"}
+          onError={() => setImageFailed(true)}
+          style={{ flexShrink: 0, display: 'block' }}
+        />
+      )}
 
       {/* Wordmark (Fades/Slides gracefully, Never renders when showWordmark=false) */}
       {showWordmark && (

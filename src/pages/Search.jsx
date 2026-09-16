@@ -5,7 +5,7 @@ import MediaCard from '../components/cards/MediaCard';
 import TrackRow from '../components/cards/TrackRow';
 import SectionHeader from '../components/ui/SectionHeader';
 import EmptyState from '../components/ui/EmptyState';
-import { Search as SearchIcon, X } from '../components/ui/Icons';
+import { Search as SearchIcon, X } from 'lucide-react';
 
 export default function Search() {
   const { query, setQuery, selectedGenre, setSelectedGenre, genres, results } = useSearch();
@@ -77,7 +77,7 @@ export default function Search() {
                   display: 'flex',
                 }}
               >
-                <X size={24} />
+                <X size={24} strokeWidth={1.5} color="var(--color-text-secondary)" />
               </button>
             )}
           </div>

@@ -4,7 +4,7 @@ import PlayButton from '../ui/PlayButton';
 import LikeButton from '../ui/LikeButton';
 import Slider from '../ui/Slider';
 import SleepTimer from '../ui/SleepTimer';
-import { SkipBack, SkipForward, Volume2, VolumeX, ListMusic, ChevronUp, Sparkles } from '../ui/Icons';
+import { RotateCcw, SkipBack, SkipForward, Volume2, VolumeX, ListMusic, ChevronUp, Sparkles } from 'lucide-react';
 import GeneratedCover from '../ui/GeneratedCover';
 
 function formatTime(seconds = 0) {
@@ -89,7 +89,7 @@ export default function FloatingPlayer() {
       >
         {currentTrack ? (
           <>
-            <GeneratedCover seed={currentTrack.albumId || currentTrack.id} width="48px" height="48px" borderRadius="var(--radius-full)" style={{ flexShrink: 0, boxShadow: '0 4px 12px rgba(0,0,0,0.4)' }} />
+            <GeneratedCover seed={currentTrack.albumId || currentTrack.id} image={currentTrack.coverArt} alt={`${currentTrack.title} artwork`} width="48px" height="48px" borderRadius="var(--radius-full)" style={{ flexShrink: 0, boxShadow: '0 4px 12px rgba(0,0,0,0.4)' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', minWidth: 0 }}>
               <span
                 className="font-display"
@@ -166,7 +166,8 @@ export default function FloatingPlayer() {
                 gap: '2px',
               }}
             >
-              <span style={{ fontSize: '10px' }}>↺15</span>
+              <RotateCcw size={16} strokeWidth={1.5} color="var(--color-text-secondary)" />
+              <span style={{ fontSize: '10px', color: 'var(--color-text-secondary)' }}>15</span>
             </div>
           </button>
 
@@ -186,7 +187,7 @@ export default function FloatingPlayer() {
             onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-text-secondary)')}
             aria-label="Previous Track"
           >
-            <SkipBack size={18} />
+            <SkipBack size={18} strokeWidth={1.5} color="var(--color-text-secondary)" />
           </button>
 
           <PlayButton
@@ -211,7 +212,7 @@ export default function FloatingPlayer() {
             onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-text-secondary)')}
             aria-label="Next Track"
           >
-            <SkipForward size={18} />
+            <SkipForward size={18} strokeWidth={1.5} color="var(--color-text-secondary)" />
           </button>
         </div>
 
@@ -281,7 +282,7 @@ export default function FloatingPlayer() {
               transition: 'all 180ms cubic-bezier(0.32, 0.72, 0, 1)',
             }}
           >
-            <Sparkles size={12} />
+            <Sparkles size={12} strokeWidth={1.5} color="var(--color-accent)" />
             <span>Receipt</span>
           </button>
         )}
@@ -319,7 +320,7 @@ export default function FloatingPlayer() {
               display: 'flex',
             }}
           >
-            {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+            {isMuted ? <VolumeX size={16} strokeWidth={1.5} color="var(--color-accent)" /> : <Volume2 size={16} strokeWidth={1.5} color="var(--color-text-secondary)" />}
           </button>
           <Slider
             value={isMuted ? 0 : volume}
@@ -351,7 +352,7 @@ export default function FloatingPlayer() {
             if (!isQueueOpen) e.currentTarget.style.color = 'var(--color-text-secondary)';
           }}
         >
-          <ListMusic size={18} />
+          <ListMusic size={18} strokeWidth={1.5} color="var(--color-text-secondary)" />
         </button>
 
         {/* Expand Chevron to Fullscreen Now Playing */}
@@ -371,7 +372,7 @@ export default function FloatingPlayer() {
           onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-text-primary)')}
           onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-text-secondary)')}
         >
-          <ChevronUp size={18} />
+          <ChevronUp size={18} strokeWidth={1.5} color="var(--color-text-secondary)" />
         </button>
       </div>
 

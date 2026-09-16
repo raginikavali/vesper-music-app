@@ -1,6 +1,6 @@
 import React from 'react';
 import { usePlayer } from '../../hooks/usePlayer';
-import { Compass, Search, Library, ListMusic } from '../ui/Icons';
+import { Compass, Search, Library, ListMusic } from 'lucide-react';
 
 export default function MobileTabBar() {
   const { activeRoute, navigateTo, isQueueOpen, toggleQueue } = usePlayer();
@@ -53,7 +53,7 @@ export default function MobileTabBar() {
               transition: 'color var(--transition-fast)',
             }}
           >
-            <Icon size={20} />
+            <Icon size={20} strokeWidth={1.5} color={isActive ? 'var(--color-accent)' : 'var(--color-text-secondary)'} />
             <span
               style={{
                 fontFamily: 'var(--font-ui)',

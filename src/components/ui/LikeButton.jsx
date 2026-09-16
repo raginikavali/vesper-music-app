@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart } from './Icons';
+import { Heart } from 'lucide-react';
 
 export default function LikeButton({
   isLiked = false,
@@ -59,8 +59,8 @@ export default function LikeButton({
         size={size}
         className={animating ? 'heart-liked' : ''}
         fill={isLoved ? 'var(--color-accent)' : 'none'}
-        stroke={isLiked || isLoved ? 'var(--color-accent)' : 'currentColor'}
-        strokeWidth={isLoved ? 0 : 1.8}
+        color={isLiked || isLoved ? 'var(--color-accent)' : 'var(--color-text-secondary)'}
+        strokeWidth={1.5}
       />
 
       <style>{`

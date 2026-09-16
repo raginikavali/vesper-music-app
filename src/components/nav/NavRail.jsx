@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Logo from './Logo';
 import { usePlayer } from '../../hooks/usePlayer';
-import { Compass, Search, Library, ListMusic, Sparkles } from '../ui/Icons';
+import { Compass, Search, Library, ListMusic, Sparkles } from 'lucide-react';
 
 export default function NavRail() {
   const { activeRoute, navigateTo, isQueueOpen, toggleQueue, toggleFocusMode, focusMode } = usePlayer();
@@ -108,7 +108,7 @@ export default function NavRail() {
                 />
               )}
 
-              <Icon size={22} strokeWidth={1.5} style={{ flexShrink: 0 }} />
+              <Icon size={22} strokeWidth={1.5} color={isActive ? 'var(--color-accent)' : 'var(--color-text-secondary)'} style={{ flexShrink: 0 }} />
 
               <span
                 style={{

@@ -1,6 +1,6 @@
 import React from 'react';
 import { usePlayer } from '../../hooks/usePlayer';
-import { X, Sparkles } from './Icons';
+import { X, Sparkles } from 'lucide-react';
 
 export default function ListeningReceipt() {
   const { sessionHistory, isReceiptModalOpen, setReceiptModalOpen } = usePlayer();
@@ -73,7 +73,7 @@ export default function ListeningReceipt() {
             padding: '4px',
           }}
         >
-          <X size={20} />
+          <X size={20} strokeWidth={1.5} color="var(--color-text-primary)" />
         </button>
 
         {/* Receipt Header */}

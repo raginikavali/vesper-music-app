@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { usePlayer } from '../../hooks/usePlayer';
-import { Clock } from './Icons';
+import { Check, Clock } from 'lucide-react';
 
 export default function SleepTimer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,7 +89,7 @@ export default function SleepTimer() {
             </span>
           </div>
         ) : (
-          <Clock size={18} />
+          <Clock size={18} strokeWidth={1.5} color="var(--color-text-secondary)" />
         )}
       </button>
 
@@ -158,7 +158,7 @@ export default function SleepTimer() {
                   }}
                 >
                   <span>{opt.label}</span>
-                  {isSelected && <span style={{ fontSize: '10px', color: 'var(--color-accent)' }}>✓</span>}
+                  {isSelected && <Check size={14} strokeWidth={1.5} color="var(--color-accent)" />}
                 </button>
               );
             })}

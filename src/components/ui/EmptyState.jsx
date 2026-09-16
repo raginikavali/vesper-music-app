@@ -1,5 +1,5 @@
 import React from 'react';
-import { Music, Heart, Search } from './Icons';
+import { Music, Heart, Search } from 'lucide-react';
 
 export default function EmptyState({ icon: Icon = Music, title, description, actionText, onAction }) {
   return (
@@ -30,7 +30,7 @@ export default function EmptyState({ icon: Icon = Music, title, description, act
           marginBottom: '20px',
         }}
       >
-        <Icon size={28} />
+        <Icon size={28} strokeWidth={1.5} color="var(--color-accent)" />
       </div>
 
       <h3 className="h3" style={{ marginBottom: '8px' }}>{title}</h3>

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useMoodMatch } from '../../hooks/useMoodMatch';
 import { usePlayer } from '../../hooks/usePlayer';
 import PlayButton from './PlayButton';
-import { Sparkles } from './Icons';
+import { Sparkles } from 'lucide-react';
 
 export default function MoodDial({ songs }) {
   const [handlePos, setHandlePos] = useState({ x: 0.35, y: 0.35 });
@@ -206,7 +206,7 @@ export default function MoodDial({ songs }) {
         {/* Right Info & Live Matched Tracks */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-accent)' }}>
-            <Sparkles size={16} />
+            <Sparkles size={16} strokeWidth={1.5} color="var(--color-accent)" />
             <span className="caption">ATMOSPHERIC MOOD DIAL</span>
           </div>
 

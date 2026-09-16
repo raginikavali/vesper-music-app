@@ -7,7 +7,7 @@ import MediaCard from '../components/cards/MediaCard';
 import TrackRow from '../components/cards/TrackRow';
 import GeneratedCover from '../components/ui/GeneratedCover';
 import SectionHeader from '../components/ui/SectionHeader';
-import { Sparkles, Compass } from '../components/ui/Icons';
+import { Sparkles, Compass } from 'lucide-react';
 
 export default function Discover() {
   const { albums, artists, songs, playAlbum, playTrack, isAlbumLiked, cycleLikeSong, toggleLikeAlbum, navigateTo } = usePlayer();
@@ -124,7 +124,7 @@ export default function Discover() {
             overflow: 'hidden',
           }}
         >
-          <GeneratedCover seed={featuredAlbum.id} borderRadius="24px" width="100%" height="100%" />
+          <GeneratedCover seed={featuredAlbum.id} image={featuredAlbum.coverArt} alt={`${featuredAlbum.title} artwork`} borderRadius="24px" width="100%" height="100%" />
 
           {/* Diagonal Soft-Edged Scrim blending into page background */}
           <div
@@ -184,7 +184,7 @@ export default function Discover() {
             onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-4px)')}
             onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
           >
-            <GeneratedCover seed={editorsPick.id} style={{ position: 'absolute', inset: 0, zIndex: 0 }} />
+            <GeneratedCover seed={editorsPick.id} image={editorsPick.coverArt} alt={`${editorsPick.title} artwork`} style={{ position: 'absolute', inset: 0, zIndex: 0 }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,16,19,0.92) 0%, rgba(18,16,19,0.3) 60%)', zIndex: 1 }} />
 
             <div style={{ position: 'relative', zIndex: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

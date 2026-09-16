@@ -4,7 +4,7 @@ import PlayButton from '../components/ui/PlayButton';
 import LikeButton from '../components/ui/LikeButton';
 import TrackRow from '../components/cards/TrackRow';
 import GeneratedCover from '../components/ui/GeneratedCover';
-import { Clock, Disc, ArrowLeft } from '../components/ui/Icons';
+import { Clock, Disc3 as Disc, ArrowLeft } from 'lucide-react';
 
 export default function AlbumDetail() {
   const { albums, songs, routeParams, playAlbum, isAlbumLiked, toggleLikeAlbum, navigateTo } = usePlayer();
@@ -60,7 +60,7 @@ export default function AlbumDetail() {
       >
         {/* Background Generative Artwork Bleed */}
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <GeneratedCover seed={album.id} width="100%" height="100%" style={{ filter: 'blur(30px) brightness(0.35)' }} />
+          <GeneratedCover seed={album.id} image={album.coverArt} alt={`${album.title} artwork`} width="100%" height="100%" style={{ filter: 'blur(30px) brightness(0.35)' }} />
         </div>
 
         {/* Gradient Scrim into Base Color */}
@@ -97,7 +97,7 @@ export default function AlbumDetail() {
               flexShrink: 0,
             }}
           >
-            <GeneratedCover seed={album.id} width="100%" height="100%" borderRadius="16px" />
+            <GeneratedCover seed={album.id} image={album.coverArt} alt={`${album.title} artwork`} width="100%" height="100%" borderRadius="16px" />
           </div>
 
           {/* Details Column */}
@@ -142,7 +142,7 @@ export default function AlbumDetail() {
               <span>{album.genre}</span>
               <span>•</span>
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                <Clock size={14} />
+                <Clock size={14} strokeWidth={1.5} color="var(--color-text-secondary)" />
                 <span>{albumTracks.length} tracks ({totalMins} mins)</span>
               </div>
             </div>

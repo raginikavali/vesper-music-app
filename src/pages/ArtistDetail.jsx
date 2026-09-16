@@ -5,7 +5,7 @@ import TrackRow from '../components/cards/TrackRow';
 import MediaCard from '../components/cards/MediaCard';
 import SectionHeader from '../components/ui/SectionHeader';
 import GeneratedCover from '../components/ui/GeneratedCover';
-import { BadgeCheck, Users, ArrowLeft } from '../components/ui/Icons';
+import { BadgeCheck, Users, ArrowLeft } from 'lucide-react';
 
 export default function ArtistDetail() {
   const { artists, songs, albums, routeParams, isArtistLiked, toggleLikeArtist, navigateTo } = usePlayer();
@@ -60,7 +60,7 @@ export default function ArtistDetail() {
       >
         {/* Background Generative Artwork */}
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <GeneratedCover seed={artist.id} width="100%" height="100%" style={{ filter: 'brightness(0.45)' }} />
+          <GeneratedCover seed={artist.id} image={artist.heroImage} alt={`${artist.name} artist artwork`} width="100%" height="100%" style={{ filter: 'brightness(0.45)' }} />
         </div>
 
         {/* Gradient Scrim */}
@@ -97,12 +97,12 @@ export default function ArtistDetail() {
               flexShrink: 0,
             }}
           >
-            <GeneratedCover seed={artist.id} width="100%" height="100%" borderRadius="9999px" />
+            <GeneratedCover seed={artist.id} image={artist.avatar} alt={`${artist.name} portrait`} width="100%" height="100%" borderRadius="9999px" />
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', flex: 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <BadgeCheck size={20} style={{ color: 'var(--color-accent)' }} />
+              <BadgeCheck size={20} strokeWidth={1.5} color="var(--color-accent)" />
               <span className="caption" style={{ color: 'var(--color-accent)' }}>
                 VERIFIED ARTIST
               </span>
@@ -134,7 +134,7 @@ export default function ArtistDetail() {
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginTop: '8px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-secondary)' }}>
-                <Users size={16} />
+                <Users size={16} strokeWidth={1.5} color="var(--color-text-secondary)" />
                 <span style={{ fontSize: '14px', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
                   {artist.monthlyListeners} monthly listeners
                 </span>

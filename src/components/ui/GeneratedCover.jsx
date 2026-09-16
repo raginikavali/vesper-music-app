@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 // Deterministic seed hash function
 function hashSeed(seed = 'vesper') {
@@ -23,12 +23,20 @@ const COLOR_PALETTES = [
 
 export default function GeneratedCover({
   seed = 'vesper-1',
+  image = '',
+  alt = '',
   width = '100%',
   height = '100%',
   borderRadius = 'var(--radius-md)',
   style = {},
   className = '',
 }) {
+  const [imageFailed, setImageFailed] = useState(false);
+
+  useEffect(() => {
+    setImageFailed(false);
+  }, [image]);
+
   const artworkParams = useMemo(() => {
     const num = hashSeed(seed);
     const paletteIndex = num % COLOR_PALETTES.length;
@@ -73,12 +81,28 @@ export default function GeneratedCover({
         ...style,
       }}
     >
+      {image && !imageFailed && (
+        <img
+          src={image}
+          alt={alt}
+          onError={() => setImageFailed(true)}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block',
+            zIndex: 1,
+          }}
+        />
+      )}
       <svg
         width="100%"
         height="100%"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
-        style={{ display: 'block' }}
+        style={{ display: image && !imageFailed ? 'none' : 'block' }}
       >
         <defs>
           {/* Subtle Grain Filter Overlay */}

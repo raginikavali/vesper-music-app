@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Pause, Heart, ListMusic, Quote } from '../ui/Icons';
+import { AudioWaveform, ListMusic, Play, StickyNote } from 'lucide-react';
 import LikeButton from '../ui/LikeButton';
 import GeneratedCover from '../ui/GeneratedCover';
 import { usePlayer } from '../../hooks/usePlayer';
@@ -63,7 +63,9 @@ export default function TrackRow({
       onMouseLeave={() => setIsHovered(false)}
       style={{
         display: 'grid',
-        gridTemplateColumns: showAlbum ? '40px 1fr 1fr 60px 70px 100px' : '40px 1fr 60px 70px 100px',
+        gridTemplateColumns: showAlbum
+          ? '40px 48px minmax(200px, 1fr) 160px 48px 60px auto auto'
+          : '40px 48px minmax(200px, 1fr) 48px 60px auto auto',
         alignItems: 'center',
         gap: '16px',
         height: '72px',
@@ -120,31 +122,39 @@ export default function TrackRow({
             <div className="equalizer-bar" />
           </div>
         ) : isHovered ? (
-          <Play size={16} fill="currentColor" style={{ color: 'var(--color-text-primary)' }} />
+          <Play size={16} fill="var(--color-text-primary)" strokeWidth={1.5} color="var(--color-text-primary)" />
         ) : (
           <span>{String(index + 1).padStart(2, '0')}</span>
         )}
       </div>
 
-      {/* Track info (48px Album Art + Title + Note Caption) */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '14px', minWidth: 0 }}>
-        <GeneratedCover seed={track.albumId || track.id} width="48px" height="48px" borderRadius="var(--radius-md)" style={{ flexShrink: 0, boxShadow: '0 4px 12px rgba(0,0,0,0.4)' }} />
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', minWidth: 0, width: '100%' }}>
+      {/* Album Art */}
+      <GeneratedCover seed={track.albumId || track.id} image={track.coverArt} alt={`${track.title} artwork`} width="48px" height="48px" borderRadius="var(--radius-md)" style={{ flexShrink: 0, boxShadow: '0 4px 12px rgba(0,0,0,0.4)' }} />
+
+      {/* Title, saved note indicator, and artist */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', flex: 1, minWidth: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', minWidth: 0 }}>
           <span
+            title={track.title}
             style={{
               fontFamily: isCurrentTrack ? 'var(--font-display)' : 'var(--font-ui)',
               fontSize: '15px',
-              fontWeight: isCurrentTrack ? 600 : 500,
+              fontWeight: 600,
               color: isCurrentTrack ? 'var(--color-accent)' : 'var(--color-text-primary)',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
+              minWidth: 0,
             }}
           >
             {track.title}
           </span>
+          {existingNote && (
+            <StickyNote size={15} strokeWidth={1.5} color="var(--color-accent)" fill="var(--color-accent)" aria-label="Saved note" />
+          )}
+        </div>
 
-          {/* Inline Note Editor or Saved Gold-Italic Note Caption */}
+        {/* Inline Note Editor or saved note */}
           {isEditingNote ? (
             <input
               type="text"
@@ -183,9 +193,7 @@ export default function TrackRow({
                 textOverflow: 'ellipsis',
                 whiteSpace: 'nowrap',
               }}
-            >
-              📝 {existingNote}
-            </span>
+            >{existingNote}</span>
           ) : (
             <span
               onClick={(e) => {
@@ -204,7 +212,6 @@ export default function TrackRow({
               {track.artist}
             </span>
           )}
-        </div>
       </div>
 
       {/* Album Title Column */}
@@ -227,27 +234,9 @@ export default function TrackRow({
         </span>
       )}
 
-      {/* Mini SVG Waveform Strip (40x24) */}
+      {/* Waveform */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
-          {/* Muted Gray Base Waveform Bars */}
-          <rect x="2" y="8" width="3" height="8" rx="1.5" fill="rgba(244,241,236,0.18)" />
-          <rect x="7" y="4" width="3" height="16" rx="1.5" fill="rgba(244,241,236,0.18)" />
-          <rect x="12" y="10" width="3" height="4" rx="1.5" fill="rgba(244,241,236,0.18)" />
-          <rect x="17" y="2" width="3" height="20" rx="1.5" fill="rgba(244,241,236,0.18)" />
-          <rect x="22" y="6" width="3" height="12" rx="1.5" fill="rgba(244,241,236,0.18)" />
-          <rect x="27" y="3" width="3" height="18" rx="1.5" fill="rgba(244,241,236,0.18)" />
-          <rect x="32" y="9" width="3" height="6" rx="1.5" fill="rgba(244,241,236,0.18)" />
-
-          {/* Gold Filled Overlay up to play position ratio */}
-          <rect x="2" y="8" width="3" height="8" rx="1.5" fill={currentRatio >= 0.1 ? 'var(--color-accent)' : 'transparent'} />
-          <rect x="7" y="4" width="3" height="16" rx="1.5" fill={currentRatio >= 0.25 ? 'var(--color-accent)' : 'transparent'} />
-          <rect x="12" y="10" width="3" height="4" rx="1.5" fill={currentRatio >= 0.4 ? 'var(--color-accent)' : 'transparent'} />
-          <rect x="17" y="2" width="3" height="20" rx="1.5" fill={currentRatio >= 0.55 ? 'var(--color-accent)' : 'transparent'} />
-          <rect x="22" y="6" width="3" height="12" rx="1.5" fill={currentRatio >= 0.7 ? 'var(--color-accent)' : 'transparent'} />
-          <rect x="27" y="3" width="3" height="18" rx="1.5" fill={currentRatio >= 0.85 ? 'var(--color-accent)' : 'transparent'} />
-          <rect x="32" y="9" width="3" height="6" rx="1.5" fill={currentRatio >= 0.95 ? 'var(--color-accent)' : 'transparent'} />
-        </svg>
+        <AudioWaveform size={24} strokeWidth={1.5} color={isCurrentTrack ? 'var(--color-accent)' : 'var(--color-text-secondary)'} />
       </div>
 
       {/* Duration */}
@@ -276,7 +265,7 @@ export default function TrackRow({
             display: 'flex',
           }}
         >
-          <Quote size={15} />
+          <StickyNote size={16} strokeWidth={1.5} color="var(--color-text-secondary)" />
         </button>
 
         {/* Add to Queue (Fades in on hover) */}
@@ -299,7 +288,7 @@ export default function TrackRow({
           onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-accent)')}
           onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-text-secondary)')}
         >
-          <ListMusic size={15} />
+          <ListMusic size={16} strokeWidth={1.5} color="var(--color-text-secondary)" />
         </button>
 
         {/* Two-Tap Like Button (Always visible) */}

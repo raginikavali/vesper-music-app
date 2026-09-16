@@ -92,6 +92,8 @@ export default function MediaCard({
       >
         <GeneratedCover
           seed={item.id || title}
+          image={isArtist ? item.avatar : item.coverArt}
+          alt={`${title} artwork`}
           borderRadius={isArtist ? 'var(--radius-full)' : 'var(--radius-md)'}
           style={{
             transform: isHovered ? 'scale(1.05)' : 'scale(1)',

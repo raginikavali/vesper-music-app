@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Pause } from './Icons';
+import { Play, Pause } from 'lucide-react';
 
 export default function PlayButton({
   isPlaying = false,
@@ -21,7 +21,7 @@ export default function PlayButton({
   };
 
   const getColor = () => {
-    if (variant === 'gold') return '#121013';
+    if (variant === 'gold') return 'var(--color-base)';
     return 'var(--color-text-primary)';
   };
 
@@ -71,12 +71,13 @@ export default function PlayButton({
         }}
       >
         {isPlaying ? (
-          <Pause size={dimensions.icon} fill={getColor()} strokeWidth={1.5} />
+          <Pause size={dimensions.icon} fill={getColor()} strokeWidth={1.5} color={getColor()} />
         ) : (
           <Play
             size={dimensions.icon}
             fill={getColor()}
             strokeWidth={1.5}
+            color={getColor()}
             style={{ marginLeft: size === 'sm' ? '2px' : '3px' }}
           />
         )}

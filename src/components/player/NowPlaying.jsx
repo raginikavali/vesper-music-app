@@ -12,7 +12,7 @@ import {
   ListMusic,
   Quote,
   Sparkles,
-} from '../ui/Icons';
+} from 'lucide-react';
 import GeneratedCover from '../ui/GeneratedCover';
 
 function formatTime(seconds = 0) {
@@ -93,7 +93,7 @@ export default function NowPlaying() {
           pointerEvents: 'none',
         }}
         >
-          <GeneratedCover seed={currentTrack.albumId || currentTrack.id} style={{ width: '100%', height: '100%' }} />
+          <GeneratedCover seed={currentTrack.albumId || currentTrack.id} image={currentTrack.coverArt} alt={`${currentTrack.title} artwork`} style={{ width: '100%', height: '100%' }} />
         </div>
 
       {/* Top Header Bar */}
@@ -129,7 +129,7 @@ export default function NowPlaying() {
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(244,241,236,0.06)')}
           aria-label="Collapse Now Playing"
         >
-          <ChevronDown size={24} />
+          <ChevronDown size={24} strokeWidth={1.5} color="var(--color-text-primary)" />
         </button>
 
         {/* View Toggle Tabs (Now Playing / Lyrics) */}
@@ -202,7 +202,7 @@ export default function NowPlaying() {
             }}
             aria-label="Open Queue"
           >
-            <ListMusic size={22} />
+            <ListMusic size={22} strokeWidth={1.5} color="var(--color-text-secondary)" />
           </button>
         )}
       </header>
@@ -246,7 +246,7 @@ export default function NowPlaying() {
                 border: '1px solid rgba(244,241,236,0.15)',
               }}
             >
-              <GeneratedCover seed={currentTrack.albumId || currentTrack.id} style={{ width: '100%', height: '100%' }} />
+              <GeneratedCover seed={currentTrack.albumId || currentTrack.id} image={currentTrack.coverArt} alt={`${currentTrack.title} artwork`} style={{ width: '100%', height: '100%' }} />
             </div>
 
             {/* Title & Artist & Two-Tap Like */}
@@ -355,7 +355,8 @@ export default function NowPlaying() {
                     transition: isRotating ? 'transform 300ms cubic-bezier(0.32, 0.72, 0, 1)' : 'none',
                   }}
                 >
-                  ↺15
+                  <SkipBack size={16} strokeWidth={1.5} color="var(--color-text-primary)" />
+                  <span style={{ fontSize: '12px' }}>15</span>
                 </div>
               </button>
 
@@ -370,7 +371,7 @@ export default function NowPlaying() {
                   display: 'flex',
                 }}
               >
-                <SkipBack size={26} />
+                <SkipBack size={26} strokeWidth={1.5} color="var(--color-text-primary)" />
               </button>
 
               <PlayButton
@@ -390,7 +391,7 @@ export default function NowPlaying() {
                   display: 'flex',
                 }}
               >
-                <SkipForward size={26} />
+                <SkipForward size={26} strokeWidth={1.5} color="var(--color-text-primary)" />
               </button>
             </div>
           </div>
@@ -417,7 +418,7 @@ export default function NowPlaying() {
                 marginBottom: '24px',
               }}
             >
-              <Quote size={20} />
+              <Quote size={20} strokeWidth={1.5} color="var(--color-accent)" />
               <span className="caption">LYRICS & NOTES</span>
             </div>
 
@@ -458,7 +459,7 @@ export default function NowPlaying() {
             cursor: 'pointer',
           }}
         >
-          {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+          {isMuted ? <VolumeX size={20} strokeWidth={1.5} color="var(--color-text-secondary)" /> : <Volume2 size={20} strokeWidth={1.5} color="var(--color-text-secondary)" />}
         </button>
 
         <div style={{ width: '160px' }}>

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import GeneratedCover from './GeneratedCover';
 
 export default function IntroSplash({ onComplete }) {
   const [stage, setStage] = useState('drawing'); // 'drawing' | 'text' | 'resolving' | 'done'
+  const [imageFailed, setImageFailed] = useState(false);
 
   useEffect(() => {
     // 0 -> 400ms: SVG stroke-dashoffset animation
@@ -51,13 +53,18 @@ export default function IntroSplash({ onComplete }) {
           transition: 'transform 400ms cubic-bezier(0.32, 0.72, 0, 1)',
         }}
       >
-        <img
-          src="/vesper-mark.svg"
-          alt=""
-          width="48"
-          height="48"
-          className={stage === 'drawing' ? 'intro-mark-drawing' : ''}
-        />
+        {imageFailed ? (
+          <GeneratedCover seed="vesper-intro" width="48px" height="48px" borderRadius="var(--radius-full)" />
+        ) : (
+          <img
+            src="/vesper-mark.svg"
+            alt=""
+            width="48"
+            height="48"
+            onError={() => setImageFailed(true)}
+            className={stage === 'drawing' ? 'intro-mark-drawing' : ''}
+          />
+        )}
 
         {/* Wordmark Fades Up */}
         <span

@@ -3,7 +3,7 @@ import { usePlayer } from '../hooks/usePlayer';
 import TrackRow from '../components/cards/TrackRow';
 import MediaCard from '../components/cards/MediaCard';
 import EmptyState from '../components/ui/EmptyState';
-import { Heart, Disc, Users, Music } from '../components/ui/Icons';
+import { Heart, Disc3 as Disc, Users, Music } from 'lucide-react';
 import GeneratedCover from '../components/ui/GeneratedCover';
 
 export default function Library() {
@@ -82,6 +82,8 @@ export default function Library() {
               <GeneratedCover
                 key={idx}
                 seed={album.id}
+                image={album.coverArt}
+                alt={`${album.title} artwork`}
                 width="56px"
                 height="56px"
                 borderRadius="var(--radius-md)"
